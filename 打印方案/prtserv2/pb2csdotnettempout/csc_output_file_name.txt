@@ -1,0 +1,6 @@
+Microsoft (R) Visual C# 2005 编译器 版本 8.00.50727.5483
+用于 Microsoft (R) Windows (R) 2005 Framework 版本 2.0.50727
+版权所有(C) Microsoft Corporation 2001-2005。保留所有权利。
+
+n_prtserv.cs(131,7): warning CS1717: 对同一变量进行赋值；您是要给其他变量赋值吗?
+n_prtserv.cs(146,7): warning CS1717: 对同一变量进行赋值；您是要给其他变量赋值吗?

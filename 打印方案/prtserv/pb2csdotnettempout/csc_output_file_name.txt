@@ -1,0 +1,6 @@
+Microsoft (R) Visual C# Compiler version 4.0.30319.36415
+for Microsoft (R) .NET Framework 4.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+n_prtserv.of_convert_dx(SS)(80,7): warning CS1717: Assignment made to same variable; did you mean to assign something else?
+n_prtserv.of_convert_dx(SS)(87,7): warning CS1717: Assignment made to same variable; did you mean to assign something else?

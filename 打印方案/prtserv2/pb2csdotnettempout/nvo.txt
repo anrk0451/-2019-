@@ -1,0 +1,1 @@
+n_prtserv|n_prtserv||of_print_hhzm:IS|of_print_hhzm||of_print_jsd:ISSSS|of_print_jsd||of_print_outcard:IS|of_print_outcard||of_print_payrecord:ISI|of_print_payrecord||of_print_reglabel:IS|of_print_reglabel||of_prtregistercert:IS|of_prtregistercert||of_prtregistercertbd:IS|of_prtregistercertbd|

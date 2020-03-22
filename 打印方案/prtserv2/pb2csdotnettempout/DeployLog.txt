@@ -1,0 +1,97 @@
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>csc
+Microsoft (R) Visual C# 2005 编译器 版本 8.00.50727.5483
+用于 Microsoft (R) Windows (R) 2005 Framework 版本 2.0.50727
+版权所有(C) Microsoft Corporation 2001-2005。保留所有权利。
+
+fatal error CS2008: 未指定输入
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if errorlevel 9009 exit 3 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>setlocal
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if exist "Y:\C#\bin2019\prtserv2\pb2csdotnettempout\*.cs" del "Y:\C#\bin2019\prtserv2\pb2csdotnettempout\*.cs" 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>rename "Y:\C#\bin2019\prtserv2\pb2csdotnettempout\AssemblyInfo.bak" "AssemblyInfo.cs" 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>"C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\pb2cs" @"Y:\C#\bin2019\prtserv2\pb2csdotnettempout\projectinfo.txt" 
+n_prtserv,n_prtserv,of_print_hhzm:IS,of_print_hhzm,,of_print_jsd:ISSSS,of_print_jsd,,of_print_outcard:IS,of_print_outcard,,of_print_payrecord:ISI,of_print_payrecord,,of_print_reglabel:IS,of_print_reglabel,,of_prtregistercert:IS,of_prtregistercert,,of_prtregistercertbd:IS,of_prtregistercertbd,,
+Type-checking (pass 1) system (system)
+Parsing y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+Parsing y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Type-checking (pass 1) y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+Type-checking (pass 1) y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Type-checking (pass 1) y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+Type-checking (pass 1) y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Type-checking (pass 1) y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+Type-checking (pass 1) y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Type-checking prototypes/instance variables(pass 2) 
+Type-checking prototypes/instance variables(pass 2) 
+Type-checking methods(pass 2) y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+Type-checking methods(pass 2) y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Emitting y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Emitting y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+Emitting y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Emitting y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+Emitting y:\c#\bin2019\prtserv2\prtserv2.pbl (prtserv2)
+Emitting y:\c#\bin2019\prtserv2\prtserv2.pbl (n_prtserv)
+
+
+Error Summary : 0 error(s) 
+
+
+
+Warning Summary : 0 warning(s) 
+
+
+
+Compile complete -- 0 error(s), 0 warning(s)
+
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if ERRORLEVEL 1 exit 1 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>call build.bat c- "Y:\C#\bin2019\prtserv2\pb2csdotnettempout\csc_output_file_name.txt" 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>setlocal
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if "c-" == "" goto usage  
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if "C:\Program Files\Sybase\PowerBuilder 11.5\DotNET" == "" goto sethome 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>md bin 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>md install 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if "c-" == "c-" goto notcopy 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>reg import "C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\PBExceptionTrace.reg" 
+操作成功完成。
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>xcopy /D /Y "y:\c#\bin2019\prtserv2\prtserv2.pbd" bin\ 
+Y:\c#\bin2019\prtserv2\prtserv2.pbd
+复制了 1 个文件
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>xcopy /D /Y "y:\c#\bin2019\prtserv2\prtserv2.pbd" install\ 
+Y:\c#\bin2019\prtserv2\prtserv2.pbd
+复制了 1 个文件
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if "Y:\C#\bin2019\prtserv2\pb2csdotnettempout\csc_output_file_name.txt" == "" (csc /t:library /optimize+ /nowarn:1591 /doc:"bin\PrtServ.xml"   /platform:x86  /linkres:bin\prtserv2.pbd "/r:C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Core.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Interop.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Common.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Win.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\com.sybase.ejb.net.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\com.sybase.iiop.net.dll" /out:"bin\PrtServ.dll" *.cs )  else (csc /t:library /optimize+ /nowarn:1591 /doc:"bin\PrtServ.xml"   /platform:x86  /linkres:bin\prtserv2.pbd "/r:C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Core.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Interop.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Common.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\Sybase.PowerBuilder.Win.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\com.sybase.ejb.net.dll;C:\Program Files\Sybase\PowerBuilder 11.5\DotNET\bin\com.sybase.iiop.net.dll" /out:"bin\PrtServ.dll" *.cs  1>"Y:\C#\bin2019\prtserv2\pb2csdotnettempout\csc_output_file_name.txt" ) 
+Build Succeeded.
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>goto end 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>xcopy /D /Y "bin\PrtServ.dll" install\ 
+bin\PrtServ.dll
+复制了 1 个文件
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>endlocal
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if ERRORLEVEL 1 exit 2 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>if exist "Y:\C#\bin2019\prtserv2\pb2csdotnettempout\*.cs" del "Y:\C#\bin2019\prtserv2\pb2csdotnettempout\*.cs" 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>goto end 
+
+Y:\C#\bin2019\prtserv2\pb2csdotnettempout>endlocal
+Generating PowerBuilder .NET assemblies succeeded.
+Warning: Cannot copy the log.txt file to the output directory.

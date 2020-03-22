@@ -1,0 +1,38 @@
+1、按照博思客户端组件《财政票据客户端综合管理组件-v1.6.5.exe》以上版本
+2、安装成功之后，检查C:\Program Files (x86)\Bosssoft\Assistant\comp\common\extend，是否有NontaxIndustry.dll、IndustryConfig.ini，如没有将该dll和ini配置文件拷贝进去
+3、第三方业务系统调用初始化参数接口，参考接口文档中的《5.2客户端组件EXE调用方式》说明
+初始化票据系统服务地址、应用appid、appkey、版本号、产品类别
+例如：
+{
+	"method": "InitParams",
+	"params": {
+		"appid": "WZDCSDW4751579",
+		"data": {
+			"url": "http://127.0.0.1:8080/medical-web/",
+			"appkey": "fc82ae8b8a1fefa7e4f6f6e7cb",
+			"type": "medical"
+
+		},
+		"noise": "1527143870",
+		"version": "1.0",
+		"sign": "397F06FB4EC1989378CA995B52DA2CC7"
+
+	}
+}
+注：如不进行初始化方法调用，可进行手动初始化参数：
+C:\Program Files (x86)\Bosssoft\Assistant\comp\common\extend目录下找到；IndustryConfig.ini；
+打开配置文件，填写一下内容（按实际部署环境为准替换相关值）
+[InitParams]
+#后台服务地址
+url=http://58.22.61.222:11801/medical-web
+#接口请求appid
+appid=ZQYKDXFSDYYYLDDW3798907
+#接口请求appkey
+appkey=f2ea04b46e7613d9df7d198273
+#接口请求应用类型
+type=medical
+#接口请求应用版本号
+version=1.0
+
+
+4、初始化成功，执行打印相关接口（注：其它与打印无关api直接走后台服务http对接方式）

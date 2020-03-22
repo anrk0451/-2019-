@@ -1,0 +1,104 @@
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if "" == "" set NET_FRAMEWORK190=C:\Windows\Microsoft.NET\Framework\v4.0.30319 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc
+Microsoft (R) Visual C# Compiler version 4.0.30319.36415
+for Microsoft (R) .NET Framework 4.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+warning CS2008: No source files specified
+error CS1562: Outputs without source must have the /out option specified
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if errorlevel 9009 exit 3 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>setlocal
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if exist "Z:\C#\bin2019\prtserv\pb2csdotnettempout\*.cs" del "Z:\C#\bin2019\prtserv\pb2csdotnettempout\*.cs" 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>rename "Z:\C#\bin2019\prtserv\pb2csdotnettempout\AssemblyInfo.bak" "AssemblyInfo.cs" 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>"C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\pb2cs" @"Z:\C#\bin2019\prtserv\pb2csdotnettempout\projectinfo.txt" 
+n_prtserv,n_prtserv,of_print_hhzm:IS,of_print_hhzm,,of_print_jsd:ISSSS,of_print_jsd,,of_print_outcard:IS,of_print_outcard,,of_print_payrecord:ISI,of_print_payrecord,,of_print_reglabel:IS,of_print_reglabel,,of_prtregistercert:IS,of_prtregistercert,,of_prtregistercertbd:IS,of_prtregistercertbd,,of_read_file:SS,of_read_file,,
+Type-checking (pass 1) system (system)
+Parsing z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+Parsing z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Type-checking (pass 1) z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+Type-checking (pass 1) z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Type-checking (pass 1) z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+Type-checking (pass 1) z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Type-checking (pass 1) z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+Type-checking (pass 1) z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Type-checking prototypes/instance variables(pass 2) 
+Type-checking prototypes/instance variables(pass 2) 
+Type-checking methods(pass 2) z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+Type-checking methods(pass 2) z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Emitting z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Emitting z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+Emitting z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Emitting z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+Emitting z:\c#\bin2019\prtserv\prtserv.pbl (prtserv)
+Emitting z:\c#\bin2019\prtserv\prtserv.pbl (n_prtserv)
+
+
+Error Summary : 0 error(s) 
+
+
+
+Warning Summary : 0 warning(s) 
+
+
+
+Compile complete -- 0 error(s), 0 warning(s)
+
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if ERRORLEVEL 1 exit 1 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>call build.bat c- "Z:\C#\bin2019\prtserv\pb2csdotnettempout\csc_output_file_name.txt" 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>setlocal
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if "c-" == "" goto usage  
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if "C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET" == "" goto sethome 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>set NET_FRAMEWORK_PB$PBVERSION$=C:\Windows\Microsoft.NET\Framework\v4.0.30319 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>md bin 
+子目录或文件 bin 已经存在。
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>md install 
+子目录或文件 install 已经存在。
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if "c-" == "c-" goto notcopy 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>reg import "C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\PBExceptionTrace.reg" 
+操作成功完成。
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>xcopy /D /Y "z:\c#\bin2019\prtserv\prtserv.pbd" bin\ 
+Z:\c#\bin2019\prtserv\prtserv.pbd
+复制了 1 个文件
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>xcopy /D /Y "z:\c#\bin2019\prtserv\prtserv.pbd" install\ 
+Z:\c#\bin2019\prtserv\prtserv.pbd
+复制了 1 个文件
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if "Z:\C#\bin2019\prtserv\pb2csdotnettempout\csc_output_file_name.txt" == "" (C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc /t:library /debug /nowarn:1591 /doc:"bin\PrtServ.xml"   /platform:x86  "/r:C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Core.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Interop.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Common.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Win.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.WinWebDataWindowCommon.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\com.sybase.ejb.net.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\com.sybase.iiop.net.dll"  /out:"bin\PrtServ.dll" *.cs )  else (C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc /t:library /debug /nowarn:1591 /doc:"bin\PrtServ.xml"   /platform:x86  "/r:C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Core.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Interop.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Common.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.Win.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\Sybase.PowerBuilder.WinWebDataWindowCommon.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\com.sybase.ejb.net.dll;C:\Program Files (x86)\Appeon\PowerBuilder 19.0\DotNET\bin\com.sybase.iiop.net.dll"  /out:"bin\PrtServ.dll" *.cs  1>"Z:\C#\bin2019\prtserv\pb2csdotnettempout\csc_output_file_name.txt" ) 
+Build Succeeded.
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>goto end 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>xcopy /D /Y "bin\PrtServ.dll" install\ 
+bin\PrtServ.dll
+复制了 1 个文件
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>endlocal
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if ERRORLEVEL 1 exit 2 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>if exist "Z:\C#\bin2019\prtserv\pb2csdotnettempout\*.cs" del "Z:\C#\bin2019\prtserv\pb2csdotnettempout\*.cs" 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>goto end 
+
+Z:\C#\bin2019\prtserv\pb2csdotnettempout>endlocal
+Generating PowerBuilder .NET assemblies succeeded.
+Warning: Cannot copy the log.txt file to the output directory.
