@@ -22,7 +22,7 @@ namespace Bin2019.BusinessObject
 
 		private OracleDataAdapter finAdapter =
 			new OracleDataAdapter("select * from v_financeRemoveReport where (to_char(rfa200,'yyyy-mm-dd') between :begin and :end ) ", SqlAssist.conn);
- 
+
 		private DataTable dt_detail = new DataTable("DETAIL");
 		private OracleDataAdapter deAdapter =
 			new OracleDataAdapter("select * from v_finremovedetail where sa010 = :sa010", SqlAssist.conn);
@@ -49,7 +49,7 @@ namespace Bin2019.BusinessObject
 			op_sa010 = new OracleParameter("sa010", OracleDbType.Varchar2, 10);
 			op_sa010.Direction = ParameterDirection.Input;
 
-			finAdapter.SelectCommand.Parameters.AddRange(new OracleParameter[] {  op_begin, op_end });
+			finAdapter.SelectCommand.Parameters.AddRange(new OracleParameter[] { op_begin, op_end });
 			deAdapter.SelectCommand.Parameters.AddRange(new OracleParameter[] { op_sa010 });
 
 			gridControl1.DataSource = dt_finance;
@@ -76,6 +76,7 @@ namespace Bin2019.BusinessObject
 		private void BarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			this.DoSearch();
+			this.Filter_IncludeInvoice();
 		}
 
 		public void DoSearch()
@@ -106,14 +107,22 @@ namespace Bin2019.BusinessObject
 					s_end = Convert.ToDateTime(this.swapdata["dend"]).ToString("yyyy-MM-dd");
 				}
 
-			 
+
 				op_begin.Value = s_begin;
 				op_end.Value = s_end;
 
 				this.Cursor = Cursors.WaitCursor;
 				gridView1.BeginUpdate();
 				dt_finance.Rows.Clear();
+				
 				finAdapter.Fill(dt_finance);
+
+				gridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count;
+				gridColumn1.SummaryItem.DisplayFormat = "共计 = {0:N0}笔";
+
+				gridColumn5.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+				gridColumn5.SummaryItem.DisplayFormat = "合计 = {0:N2}";
+
 				gridView1.EndUpdate();
 				this.Cursor = Cursors.Arrow;
 			}
@@ -185,20 +194,35 @@ namespace Bin2019.BusinessObject
 			}
 		}
 
-		private void gridControl1_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
 		{
-			if(e.Column.FieldName == "FA195")
+			if (e.Column.FieldName == "FA195")
 			{
 				if (e.Value.ToString() == "T")
 					e.DisplayText = "税务发票";
 				else if (e.Value.ToString() == "F")
 					e.DisplayText = "财政发票";
 			}
+		}
+
+		/// <summary>
+		/// 只包含作废发票 项目
+		/// </summary>
+		private void Filter_IncludeInvoice()
+		{
+			if (Convert.ToBoolean(toggle_1.EditValue))
+			{
+				gridView1.ActiveFilterString = "INVNUM is not null ";
+			}
+			else
+			{
+				gridView1.ActiveFilter.Clear();
+			}
+		}
+
+		private void toggle_1_EditValueChanged(object sender, EventArgs e)
+		{
+			this.Filter_IncludeInvoice();
 		}
 	}
 }
