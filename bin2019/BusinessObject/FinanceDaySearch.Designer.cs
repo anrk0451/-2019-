@@ -237,7 +237,7 @@
             superToolTip1.Items.Add(toolTipItem1);
             this.toggle_onlyme.SuperTip = superToolTip1;
             this.toggle_onlyme.EditValueChanged += new System.EventHandler(this.toggle_onlyme_EditValueChanged);
-            this.toggle_onlyme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barEditItem2_ItemClick);
+ 
             // 
             // repositoryItemToggleSwitch2
             // 

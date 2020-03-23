@@ -499,11 +499,7 @@ namespace Bin2019.BusinessObject
 				XtraMessageBox.Show("导出成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
-
-		private void barEditItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-		{
-
-		}
+ 
 
 		private void OnlyMe_Filter()
 		{
