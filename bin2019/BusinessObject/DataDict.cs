@@ -15,7 +15,7 @@ using Bin2019.Misc;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
-
+  
 namespace Bin2019.BusinessObject
 {
 	public partial class DataDict : BaseBusiness
