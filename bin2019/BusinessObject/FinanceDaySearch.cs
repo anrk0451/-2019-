@@ -175,6 +175,7 @@ namespace Bin2019.BusinessObject
 		private void BarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			this.Show_Condition();
+			OnlyMe_Filter();
 		}
 
 		private void BarButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -508,12 +509,12 @@ namespace Bin2019.BusinessObject
 		{
 			if (Convert.ToBoolean(toggle_onlyme.EditValue))
 			{
-				XtraMessageBox.Show("debug");
-				//gridView1.ActiveFilterString = "FA100 = '" + Envior.cur_userId + "'";
+				//XtraMessageBox.Show("debug");
+				gridView1.ActiveFilterString = "FA100 = '" + Envior.cur_userId + "'";
 			}
 			else
 			{
-				//gridView1.ActiveFilter.Clear();
+				gridView1.ActiveFilter.Clear();
 			}
 		}
 
